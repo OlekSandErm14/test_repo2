@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Моя сторінка</title>
+  <style>
+    /* Include padding and border in element sizes */
+    * { box-sizing: border-box; }
+
+    /* Smooth scrolling when the button jumps to #features
+       (disabled for people who prefer reduced motion) */
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    /* ---------- Header and navigation ---------- */
+    .header {
+      background-color: #2c3e50;
+      padding: 20px;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;              /* removes the default list indent */
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-list a:hover,
+    .nav-list a:focus-visible {
+      text-decoration: underline;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      /* Darkened start color (was #667eea) so white text
+         meets the WCAG AA contrast ratio across the gradient */
+      background: linear-gradient(135deg, #5568d3, #764ba2);
+      color: white;
+    }
+
+    /* ---------- Button ---------- */
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background: #c0392b;     /* dark red: passes contrast with white text */
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    /* Keyboard focus now gets the same feedback as mouse hover */
+    .btn:hover,
+    .btn:focus-visible {
+      background: #a93226;
+    }
+
+    /* ---------- Features ---------- */
+    .features {
+      padding: 60px 20px;      /* gives the section height so the scroll has a visible target */
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <!-- aria-label helps screen readers identify this navigation -->
+    <nav class="navigation" aria-label="Головна навігація">
+      <ul class="nav-list">
+        <!-- For local testing via file://, replace these with relative
+             paths such as index.html, about.html, contact.html -->
+        <li><a href="/">Головна</a></li>
+        <li><a href="/about">Про нас</a></li>
+        <li><a href="/contact">Контакти</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <h1>Ласкаво просимо!</h1>
+      <p>Це мій перший сайт</p>
+      <a href="#features" class="btn">Дізнатися більше</a>
+    </section>
+
+    <!-- Target of the button above; replace the placeholder with your content -->
+    <section id="features" class="features">
+      <h2>Можливості</h2>
+      <p>Контент з'явиться тут.</p>
+    </section>
+  </main>
+</body>
+</html>
